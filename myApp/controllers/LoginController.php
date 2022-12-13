@@ -9,11 +9,13 @@ class LoginController extends AppController
     public function init(){
 
 
-        session_start();
+        $userName = $_POST['userName'];
+        $password = $_POST['password'];
 
         
-        $data=[2];
-        echo $this->render(APP_PATH.VIEWS.'loginLayout.html', $data);
+        $data["userName"]=$userName;
+        $data["password"]=$password;
+        echo $this->render(APP_PATH.VIEWS.'layout.html', $data);
 
     }
 }

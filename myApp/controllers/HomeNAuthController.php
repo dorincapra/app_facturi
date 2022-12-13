@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends AppController
+class HomeNAuthController extends AppController
 {
     public function __construct(){
         $this->init();
@@ -8,8 +8,9 @@ class HomeController extends AppController
 
     public function init(){
 
-        
 
+    
+        $data=[2];
         echo $this->render(APP_PATH.VIEWS.'loginLayout.html', $data);
 
     }
