@@ -10,8 +10,7 @@ class HomeNAuthController extends AppController
 
 
     
-        $data=[2];
+        $data["mesaj"]="Introdu userul si parola";
         echo $this->render(APP_PATH.VIEWS.'loginLayout.html', $data);
-
     }
 }

@@ -10,7 +10,6 @@ class HomeController extends AppController
 
         
 
-        echo $this->render(APP_PATH.VIEWS.'loginLayout.html', $data);
-
+        // pagina home, to dashboard n shit
     }
 }

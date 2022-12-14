@@ -6,6 +6,7 @@ class AppController
     protected $routes = [
                             'home' => 'HomeNAuthController',
                             'login' => 'LoginController',
+                            'showUsers' => 'ShowUsersController',
                             
                         ];
 

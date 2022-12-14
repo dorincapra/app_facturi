@@ -12,10 +12,14 @@ class LoginController extends AppController
         $userName = $_POST['userName'];
         $password = $_POST['password'];
 
-        
-        $data["userName"]=$userName;
-        $data["password"]=$password;
-        echo $this->render(APP_PATH.VIEWS.'layout.html', $data);
+        $user = new UsersModel;
 
+        if($user->isAuth($userName, $password)){
+        $data["content"]= $this->render(APP_PATH.VIEWS.'homeLayout.html');
+        echo $this->render(APP_PATH.VIEWS.'baseLayout.html', $data);
+        } else {
+            $data["mesaj"] = "ai gresit user/pass, incearca din nou";
+            echo $this->render(APP_PATH.VIEWS.'loginLayout.html', $data);
+        }
     }
 }
