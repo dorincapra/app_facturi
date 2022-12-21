@@ -2,21 +2,21 @@
 
 class UsersModel extends DBModel
 {
-    protected $userName;
+    protected $username;
     protected $name;
     protected $password;
 
-    public function __construct($userName='', $name='', $password=''){
-        $this->name = $userName;
+    public function __construct($username='', $name='', $password=''){
+        $this->name = $username;
         $this->name = $name;
         $this->password = $password;
     }
 
 
-    public function isAuth($userName, $password){
-        $q = "SELECT * FROM `users` WHERE `userName`= ? ";
+    public function isAuth($username, $password){
+        $q = "SELECT * FROM `users` WHERE `username`= ? ";
         $myPrep = $this->db()->prepare($q);
-        $myPrep->bind_param("s", $userName);
+        $myPrep->bind_param("s", $username);
         $myPrep->execute();
         $result = $myPrep->get_result()->fetch_assoc();
 
@@ -31,16 +31,16 @@ class UsersModel extends DBModel
         }
     }
 
-    public function addUser($userName, $name, $password, $type){
-        $q = "INSERT INTO `users` (`name`, `userName`, `password`, `tip`) VALUES (?, ?, ?, ?);";
+    public function addUser($username, $name, $password, $type){
+        $q = "INSERT INTO `users` (`name`, `username`, `password`, `tip`) VALUES (?, ?, ?, ?);";
         $myPrep = $this->db()->prepare($q);
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $myPrep->bind_param("sssi", $userName, $name, $hash, $type);
+        $myPrep->bind_param("sssi", $username, $name, $hash, $type);
         return $myPrep->execute();
     }
 
     public function showUsers(){
-        $q = "SELECT `name`, `userName` FROM users";
+        $q = "SELECT `name`, `username` FROM users";
         $result = $this->db()->query($q);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
@@ -62,7 +62,7 @@ class UsersModel extends DBModel
 
     // public function addUser($user, $pass){
     //     $hash = password_hash($pass, PASSWORD_DEFAULT);
-    //     $q = "INSERT INTO `users_test`(`userName`, `userEmail`, `userPass`, `hashedPass`) VALUES (?, ?, ?, ?);";
+    //     $q = "INSERT INTO `users_test`(`username`, `userEmail`, `userPass`, `hashedPass`) VALUES (?, ?, ?, ?);";
     //     // prepared statements
     //     $myPrep = $this->db()->prepare($q);
     //     // s - string, i - integer, d - double, b - blob

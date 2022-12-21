@@ -11,6 +11,7 @@ class HomeNAuthController extends AppController
 
     
         $data["mesaj"]="Introdu userul si parola";
-        echo $this->render(APP_PATH.VIEWS.'loginLayout.html', $data);
+        $data["content"] = $this->render(APP_PATH.VIEWS.'homepage.html');
+        echo $this->render(APP_PATH.VIEWS.'boilerplate.html',$data);
     }
 }

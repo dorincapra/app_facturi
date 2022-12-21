@@ -7,19 +7,19 @@ class LoginController extends AppController
     }
 
     public function init(){
+        
 
-
-        $userName = $_POST['userName'];
+        $username = $_POST['username'];
         $password = $_POST['password'];
 
         $user = new UsersModel;
 
-        if($user->isAuth($userName, $password)){
-        $data["content"]= $this->render(APP_PATH.VIEWS.'homeLayout.html');
-        echo $this->render(APP_PATH.VIEWS.'baseLayout.html', $data);
+        if($user->isAuth($username, $password)){
+        $data["content"]= $this->render(APP_PATH.VIEWS.'homepage.html');
+        echo $this->render(APP_PATH.VIEWS.'boilerplate.html', $data);
         } else {
             $data["mesaj"] = "ai gresit user/pass, incearca din nou";
-            echo $this->render(APP_PATH.VIEWS.'loginLayout.html', $data);
+            echo $this->render(APP_PATH.VIEWS.'loginpage.html', $data);
         }
     }
 }

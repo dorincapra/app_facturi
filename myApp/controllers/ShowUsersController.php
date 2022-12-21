@@ -14,12 +14,13 @@ class ShowUsersController extends AppController
 
         $data["usersTableContent"] = "";
 
-        if($result){
-            foreach($result as $user){
-                $data["usersTableContent"].= "<tr><td>" . $user["name"] . "</td><td>" . $user["userName"] . "</td></tr>";
-            }
-        }
-        echo $this->render(APP_PATH.VIEWS.'showUsersLayout.html', $data);
+        // if($result){
+        //     foreach($result as $user){
+        //         $data["usersTableContent"].= "<tr><td>" . $user["name"] . "</td><td>" . $user["username"] . "</td></tr>";
+        //     }
+        // }
+        $data["content"] = $this->render(APP_PATH.VIEWS.'userspage.html');
+        echo $this->render(APP_PATH.VIEWS.'boilerplate.html',$data);
 
 
     }
