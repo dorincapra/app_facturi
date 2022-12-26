@@ -1,11 +1,14 @@
 <?php
 
-class AddUserController extends AppController {
-    public function __construct(){
+class AddUserController extends AppController
+{
+    public function __construct()
+    {
         $this->init();
     }
 
-    public function init(){
+    public function init()
+    {
 
         $username = $_POST["username"];
         $password = $_POST["password"];
@@ -16,7 +19,7 @@ class AddUserController extends AppController {
 
 
 
-        if($user->addUser($username, $name, $password, $type)){
+        if ($user->addUser($username, $name, $password, $type)) {
             //show "userul a fost adaugat cu success" for 3 sec 
             //then redirect to "Users" page
             return true;
