@@ -2,21 +2,23 @@
 
 class UsersModel extends DBModel
 {
-    protected $username;
+    protected $userName;
     protected $name;
     protected $password;
+    protected $level;
 
-    public function __construct($username='', $name='', $password=''){
-        $this->name = $username;
+    public function __construct($userName='', $name='', $password='', $level=''){
+        $this->name = $userName;
         $this->name = $name;
         $this->password = $password;
     }
 
 
-    public function isAuth($username, $password){
+
+    public function isAuth($userName, $password){
         $q = "SELECT * FROM `users` WHERE `username`= ? ";
         $myPrep = $this->db()->prepare($q);
-        $myPrep->bind_param("s", $username);
+        $myPrep->bind_param("s", $userName);
         $myPrep->execute();
         $result = $myPrep->get_result()->fetch_assoc();
 
@@ -31,22 +33,21 @@ class UsersModel extends DBModel
         }
     }
 
-    public function addUser($username, $name, $password, $type){
-        $q = "INSERT INTO `users` (`name`, `username`, `password`, `tip`) VALUES (?, ?, ?, ?);";
+    public function addUser($userName, $name, $password, $level){
+        $q = "INSERT INTO `users` (`name`, `userName`, `password`, `level`) VALUES (?, ?, ?, ?);";
         $myPrep = $this->db()->prepare($q);
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $myPrep->bind_param("sssi", $username, $name, $hash, $type);
+        $myPrep->bind_param("sssi", $userName, $name, $hash, $level);
         return $myPrep->execute();
     }
 
     public function showUsers(){
-        $q = "SELECT `name`, `username`, `tip`, `email`, `tel` FROM users";
+        $q = "SELECT `name`, `username` FROM users";
         $result = $this->db()->query($q);
         return $result->fetch_all(MYSQLI_ASSOC);
     }
    
-
-     public function delUser($id){
+    public function delUser($id){
         $q = "DELETE FROM `users_test` WHERE `id` = $id";
 		$result = $this->db()->query($q);
         if($result) return true;

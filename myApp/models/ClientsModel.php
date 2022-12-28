@@ -6,13 +6,10 @@ class ClientsModel extends DBModel
     protected $cui;
     protected $j;
 
-    public function __construct($name='', $cui='', $j='', $judet='', $idAgent='', $email='', $tel=''){
+    public function __construct($name='', $cui='', $j=''){
         $this->name = $name;
         $this->cui = $cui;
         $this->j = $j;
-        $this->judet = $judet;
-        $this->email = $email;
-        $this->tel = $tel;
     }
 
 

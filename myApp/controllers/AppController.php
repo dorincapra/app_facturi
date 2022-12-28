@@ -11,7 +11,8 @@ class AppController
                             'clients' => 'ShowClientsController',
                             'costs' => 'ShowCostsController',
                             'settings' => 'ShowSettingsPageController',
-                            'genInv' => 'GenerateInvoiceController'
+                            'genInv' => 'GenerateInvoiceController',
+                            'addInv' => 'AddInvoiceController'
                             
                             
                         ];
