@@ -1,22 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>a mers asaa?</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Factura</title>
     <style>
-
-        p{
-            color: blue;
+      body {
+        background: rgb(204, 204, 204);
+      }
+      page {
+        background: white;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.5cm;
+        box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+      }
+      page[size="A4"] {
+        width: 21cm;
+        height: 29.7cm;
+      }
+      page[size="A4"][layout="portrait"] {
+        width: 29.7cm;
+        height: 21cm;
+      }
+      @media print {
+        body,
+        page {
+          margin: 0;
+          box-shadow: 0;
         }
-
+      }
     </style>
-</head>
-<body>
-    
-    <p>test</p>
-    <h1>ursu pacalit de vulpe</h1>
-
-</body>
+  </head>
+  <body>
+    <page size="A4" class="mt-2"
+      ><div class="w-full h-full mx-auto">
+        <div>
+          <div class="pt-8 px-20 mb-2">
+            <h1 class="text-4xl font-semibold text-sky-900">FACTURA</h1>
+          </div>
+          <div
+            class="bg-sky-900 text-sky-50 flex items-center justify-between p-2 text-xs px-20"
+          >
+            <p>
+              Seria <strong>F</strong> Nr. <strong>0210</strong> din
+              <strong>16/12/2022</strong>
+            </p>
+            <p>Termen plata 23/12/2022</p>
+          </div>
+          <div class="px-20 py-10 text-xs flex items-start justify-between">
+            <div class="w-1/3 p-2">
+              <img
+                src="https://www.kindpng.com/picc/m/503-5031981_bills-to-pay-png-transparent-png.png"
+                alt="bill"
+                class="object-contain"
+              />
+            </div>
+            <div class="w-1/3 p-2">
+              <p class="text-sky-900 font-bold uppercase mb-1">Furnizor</p>
+              <p class="font-bold">LDSPLENDORY ONLINE SRL</p>
+              <p>CIF: 44894085</p>
+              <p>Reg. com.: J23/5624/2021</p>
+              <p>
+                Adresa: Sat Clinceni Com. Clinceni, Str. Izvorului, Nr. 8a,
+                Cliceni
+              </p>
+              <p>Judet: Ilfov</p>
+              <p>IBAN: RO43BTRLRONCRT0616840701</p>
+              <p>Banca: BANCA TRANSILVANIA</p>
+            </div>
+            <div class="w-1/3 p-2">
+              <p class="text-sky-900 font-bold uppercase mb-1">Client</p>
+              <p class="font-bold">Roxana Hulea</p>
+              <p>CIF:</p>
+              <p>Reg. com.:</p>
+              <p>Adresa: Strada Liliacului nr 36 PB32, Oradea</p>
+              <p>Judet: Bihor</p>
+              <p>Tara: Romania</p>
+              <p>E-mail: Rhulea55@gmail.com</p>
+            </div>
+          </div>
+          <div class="bg-red-200 px-20">
+            <p class="text-sky-900 font-bold uppercase mb-1 text-xs">
+              Produse/Servicii
+            </p>
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                  <div class="overflow-hidden">
+                    <table class="min-w-full">
+                      <thead class="border-b">
+                        <tr>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            #
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Denumire
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            U.M.
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Cant.
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Pret unitar
+                          </th>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Valoare```````````````````````
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="border-b">
+                          <td
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                          >
+                            1
+                          </td>
+                          <td
+                            class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                          >
+                            Mark
+                          </td>
+                          <td
+                            class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                          >
+                            Otto
+                          </td>
+                          <td
+                            class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                          >
+                            @mdo
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div><p>Intocmit de: Dorin Capra</p></div>
+          <div>
+            <p>LDSPLENDORY ONLINE SRL</p>
+            <p>
+              Capital social: 200; Tel.: 0724583111; E-mail:
+              contact@splendory.ro; Adresa web: www.splendory.ro
+            </p>
+            <p>
+              Factura este valabila fara semnatura si stampila, conform art. 319
+              din legea 227/2015.
+            </p>
+          </div>
+          <div>Generata cu SmartBill <span>www.smartbill.ro</span></div>
+        </div>
+      </div></page
+    >
+  </body>
 </html>

@@ -10,22 +10,26 @@ class AddUserController extends AppController
     public function init()
     {
 
-        $username = $_POST["username"];
+        $userName = $_POST["userName"];
         $password = $_POST["password"];
         $name = $_POST["name"];
-        $type = $_POST["type"];
+        $level = $_POST["level"];
+        $phone = $_POST["phone"];
+        $email = $_POST["email"];
 
         $user = new UsersModel();
 
 
 
-        if ($user->addUser($username, $name, $password, $type)) {
+        if ($user->addUser($name, $userName, $email, $phone, $password, $level)) {
             //show "userul a fost adaugat cu success" for 3 sec 
             //then redirect to "Users" page
-            return true;
+            echo "a mers";
         } else {
             //show "userul NU a fost adaugat, contacteaza developerul" for 3 sec 
             //then redirect to "Users" page
+            echo "n-a mers";
         }
+
     }
 }

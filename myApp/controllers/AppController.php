@@ -12,7 +12,10 @@ class AppController
                             'costs' => 'ShowCostsController',
                             'settings' => 'ShowSettingsPageController',
                             'genInv' => 'GenerateInvoiceController',
-                            'addInv' => 'AddInvoiceController'
+                            'addInv' => 'AddInvoiceController',
+                            'addUser' => 'AddUserController',
+                            'delUser' => 'DeleteUserController',
+                            'addClient' => 'AddClientController'
                             
                             
                         ];

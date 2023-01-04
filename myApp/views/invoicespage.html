@@ -22,9 +22,11 @@
         placeholder="Cauta..."
       />
     </div>
-    <div class="flex flex-col bg-red-200">
+    <div class="flex flex-col">
       <table class="cursor-default text-neutral-900">
-        <thead class="bg-orange-600 border-b text-neutral-50 text-xs">
+        <thead
+          class="bg-orange-600 hover:bg-orange-500 border-b text-neutral-50 text-xs"
+        >
           <tr>
             <th scope="col" class="px-6 py-2 text-left">Print</th>
             <th scope="col" class="px-6 py-2 text-left">Data emitere</th>
@@ -164,7 +166,8 @@
                   >
                     <label for="currency" class="italic mb-1">Moneda:</label
                     ><select
-                      id="currency" name="currency"
+                      id="currency"
+                      name="currency"
                       class="w-full py-0.5 px-2 text-sm placeholder:text-sm placeholder:text-neutral-400 placeholder:italic"
                     >
                       <option value="ron" selected>RON</option>
@@ -204,22 +207,22 @@
                   <div
                     class="inline-block w-1/2 flex flex-col items-start justify-center p-2"
                   >
-                    <label for="cui" class="italic mb-1"
-                      >C.U.I. / C.I.F.:</label
+                    <label for="cui" class="italic mb-1">C.U.I. / C.I.F.:</label
                     ><input
                       type="text"
-                      id="cui" name="cui"
+                      id="cui"
+                      name="cui"
                       class="w-full py-0.5 px-2 text-sm placeholder:text-sm placeholder:text-neutral-400 placeholder:italic"
                     />
                   </div>
                   <div
                     class="inline-block w-1/2 flex flex-col items-start justify-center p-2"
                   >
-                    <label for="j" class="italic mb-1"
-                      >Nr. reg. com.:</label
+                    <label for="j" class="italic mb-1">Nr. reg. com.:</label
                     ><input
                       type="text"
-                      id="j" name="j"
+                      id="j"
+                      name="j"
                       class="w-full py-0.5 px-2 text-sm placeholder:text-sm placeholder:text-neutral-400 placeholder:italic"
                     />
                   </div>
@@ -303,7 +306,8 @@
                       >Cota TVA (%):</label
                     ><input
                       type="number"
-                      id="vat" name="vat"
+                      id="vat"
+                      name="vat"
                       value="0"
                       class="w-full py-0.5 px-2 text-sm placeholder:text-sm placeholder:text-neutral-400 placeholder:italic"
                     />
@@ -315,7 +319,8 @@
                       >Denumire produs / serviciu:</label
                     ><input
                       type="text"
-                      id="items" name="items"
+                      id="items"
+                      name="items"
                       class="w-full py-0.5 px-2 text-sm placeholder:text-sm placeholder:text-neutral-400 placeholder:italic"
                     />
                   </div>
@@ -359,7 +364,8 @@
                       <label for="valoare" class="italic mb-1">Valoare:</label
                       ><input
                         type="number"
-                        id="value" name="value"
+                        id="value"
+                        name="value"
                         class="w-full py-0.5 px-2 text-sm placeholder:text-sm placeholder:text-neutral-400 placeholder:italic"
                       />
                     </div>
@@ -470,15 +476,6 @@
                   </div>
                 </div>
               </div>
-              <div class="p-2">
-                <input
-                value="submit"
-                  type="submit"
-                  class="inline-block px-4 py-1.5 bg-sky-900 text-sky-50 font-medium text-xs leading-tight rounded shadow-md hover:bg-sky-800 hover:shadow-lg focus:bg-sky-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-lg transition duration-150 ease-in-out"
-                >
-                  
-              </input>
-              </div>
             </form>
           </div>
         </div>
@@ -492,12 +489,11 @@
           >
             Inchide
           </button>
-          <button
-            type="button"
-            class="inline-block px-6 py-2.5 bg-sky-900 text-sky-50 font-medium text-xs leading-tight rounded shadow-md hover:bg-sky-800 hover:shadow-lg focus:bg-sky-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-lg transition duration-150 ease-in-out ml-1"
-          >
-            Salveaza
-          </button>
+          <input
+            value="Submit"
+            type="submit"
+            class="inline-block px-6 py-2.5 bg-sky-900 text-sky-50 font-medium text-xs leading-tight rounded shadow-md hover:bg-sky-800 hover:shadow-lg focus:bg-sky-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-lg transition duration-150 ease-in-out ml-1 cursor-pointer"
+          />
         </div>
       </div>
     </div>
